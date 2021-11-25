@@ -1,7 +1,29 @@
 export const initialState = {
-  basket: [],
+  basket: [
+    {
+      id: "12321341",
+      title:
+        "The Lean Startup: How Constant innovation Creates Radically Successful Businesses Paperback",
+      price: 19.96,
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg",
+      rating: 5,
+    },
+    {
+      id: "12321341",
+      title:
+        "The Lean Startup: How Constant innovation Creates Radically Successful Businesses Paperback",
+      price: 19.96,
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg",
+      rating: 5,
+    },
+  ],
   user: null,
 };
+
+export const getBasketTotal = (basket) =>
+  basket?.reduce((amount, item) => item.price + amount, 0);
 
 const reducer = (state, action) => {
   switch (action.type) {
